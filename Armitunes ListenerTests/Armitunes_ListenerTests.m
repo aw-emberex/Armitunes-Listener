@@ -7,26 +7,30 @@
 //
 
 #import "Armitunes_ListenerTests.h"
+#import "ArmiRSSParser.h"
 
 @implementation Armitunes_ListenerTests
 
 - (void)setUp
 {
-    [super setUp];
-    
-    // Set-up code here.
+    [super setUp]; 
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
     [super tearDown];
 }
 
-- (void)testExample
+- (void) testDefaultInit
 {
-    STFail(@"Unit tests are not implemented yet in Armitunes ListenerTests");
+    ArmiRSSParser* testParser = [[ArmiRSSParser alloc] init];
+    STAssertEqualObjects(@"http://rss.armitunes.com/", testParser.rssFeedLocation, @"rssFeedLocation should be equal to default");
+}
+
+-(void) initWithFeedLocation
+{
+    ArmiRSSParser* testParser = [[ArmiRSSParser alloc] initWithFeedLocation:@"test"];
+    STAssertEqualObjects(@"test", testParser.rssFeedLocation, @"should be equal");
 }
 
 @end

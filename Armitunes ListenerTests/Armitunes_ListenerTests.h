@@ -7,6 +7,7 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "ArmiRSSParser.h"
 
 @interface Armitunes_ListenerTests : SenTestCase
 
