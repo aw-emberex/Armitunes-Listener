@@ -7,16 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Foundation/NSXMLParser.h>
 
-@interface ArmiRSSParser : NSObject
+@interface ArmiRSSParser : NSObject<NSXMLParserDelegate>
 
 @property (readwrite, atomic) NSString* rssFeedLocation;
+@property NSXMLParser* _parser;
 
 - (id) init;
 
 - (id) initWithFeedLocation: (NSString*)feedLocation;
 
+- (id) initWithFeedLocation:(NSString *)feedLocation shouldInitOnLoad:(Boolean)doInit;
 
--(id) initWithFeedLocation:(NSString *)feedLocation initOnLoad:(Boolean)shouldLoad;
+
 
 @end

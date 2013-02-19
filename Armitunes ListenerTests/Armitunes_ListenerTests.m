@@ -29,7 +29,7 @@
 
 -(void) initWithFeedLocation
 {
-    ArmiRSSParser* testParser = [[ArmiRSSParser alloc] initWithFeedLocation:@"test"];
+    ArmiRSSParser* testParser = [[ArmiRSSParser alloc] initWithFeedLocation:@"test" shouldInitOnLoad:YES];
     STAssertEqualObjects(@"test", testParser.rssFeedLocation, @"should be equal");
 }
 

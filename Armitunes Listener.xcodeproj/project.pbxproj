@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA3C2B7016D34BC90089C32E /* ParsedRSSData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3C2B6F16D34BC90089C32E /* ParsedRSSData.m */; };
 		FAC472EE16CC967200817863 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC472ED16CC967200817863 /* UIKit.framework */; };
 		FAC472F016CC967200817863 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC472EF16CC967200817863 /* Foundation.framework */; };
 		FAC472F216CC967200817863 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC472F116CC967200817863 /* CoreGraphics.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA3C2B6E16D34BC90089C32E /* ParsedRSSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsedRSSData.h; sourceTree = "<group>"; };
+		FA3C2B6F16D34BC90089C32E /* ParsedRSSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedRSSData.m; sourceTree = "<group>"; };
 		FAC472EA16CC967200817863 /* Armitunes Listener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Armitunes Listener.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC472ED16CC967200817863 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAC472EF16CC967200817863 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,8 @@
 				FAC4730C16CC967200817863 /* ArmiListenViewController.m */,
 				FAC472F416CC967200817863 /* Supporting Files */,
 				FAC4732B16CC973B00817863 /* ArmiRSSParser.h */,
+				FA3C2B6E16D34BC90089C32E /* ParsedRSSData.h */,
+				FA3C2B6F16D34BC90089C32E /* ParsedRSSData.m */,
 				FAC4732C16CC973B00817863 /* ArmiRSSParser.m */,
 			);
 			path = "Armitunes Listener";
@@ -285,6 +290,7 @@
 				FAC472FE16CC967200817863 /* ArmiListenAppDelegate.m in Sources */,
 				FAC4730D16CC967200817863 /* ArmiListenViewController.m in Sources */,
 				FAC4732D16CC973B00817863 /* ArmiRSSParser.m in Sources */,
+				FA3C2B7016D34BC90089C32E /* ParsedRSSData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +482,7 @@
 				FAC4732716CC967200817863 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAC4732816CC967200817863 /* Build configuration list for PBXNativeTarget "Armitunes ListenerTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +491,7 @@
 				FAC4732A16CC967200817863 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

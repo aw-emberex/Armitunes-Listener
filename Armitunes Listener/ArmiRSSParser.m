@@ -11,6 +11,7 @@
 @implementation ArmiRSSParser
 
 @synthesize rssFeedLocation = _rssFeedLocation;
+@synthesize _parser;
 
 - (id) init
 {
@@ -19,15 +20,45 @@
 
 - (id) initWithFeedLocation:(NSString *)feedLocation
 {
-    return [self initWithFeedLocation:feedLocation initOnLoad:YES];
+    return [self initWithFeedLocation:feedLocation shouldInitOnLoad:YES];
 }
 
+- (void)parseFile
+{
+    self._parser = [[NSXMLParser alloc] initWithContentsOfURL: [[NSURL alloc] initWithString:self.rssFeedLocation]];
+    [self._parser setDelegate:self];
+    [self._parser setShouldResolveExternalEntities:YES];
+    [self._parser parse];
+}
 
--(id) initWithFeedLocation:(NSString *)feedLocation initOnLoad:(Boolean)shouldLoad
+-(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
+{
+    NSLog(elementName);
+    if ([elementName isEqualToString:@"item"])
+    {
+        
+    }
+}
+
+-(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
+{
+    NSLog(@"did end with %@", elementName);
+}
+
+-(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
+{
+    NSLog(@"found these characters %@", string);
+}
+
+-(id) initWithFeedLocation:(NSString *)feedLocation shouldInitOnLoad:(Boolean)doInit
 {
     if (self = [super init])
     {
         [self setRssFeedLocation:feedLocation];
+    }
+    if (doInit)
+    {
+        [self parseFile];
     }
     return self;
 }
