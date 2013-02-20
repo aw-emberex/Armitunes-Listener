@@ -46,9 +46,15 @@
 {
     [self setup];
     [self.testData addSong:@"test song1"];
-    [self.testData addSong:@"another jing is awesome"];
+    [self.testData addSong:@"jing is awesome"];
     STAssertEquals([self.testData getNumberofSongs], 2, @"Number of Songs added should be 2");
-    
+}
+
+-(void) test_parsingDefaultFile_realfeed
+{
+    ArmiRSSParser* parser = [[ArmiRSSParser alloc] init];
+    ParsedRSSData* result = [parser parseFile];
+    STAssertNotNil([result currentlyPlayingSong], @"There should be a currently playing song");
 }
 
 @end

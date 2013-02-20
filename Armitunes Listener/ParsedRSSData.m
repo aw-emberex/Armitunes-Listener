@@ -18,6 +18,7 @@
     if (self = [super init])
     {
         self.nextUpSongs = [[NSMutableArray alloc]init];
+        self.currentlyPlayingSong = nil;
         return self;
     }
     return self;
