@@ -17,6 +17,7 @@
 {
     if (self = [super init])
     {
+        self.nextUpSongs = [[NSMutableArray alloc]init];
         return self;
     }
     return self;
@@ -24,7 +25,7 @@
 
 -(void) addSong:(NSString *)newSong
 {
-    
+    [self.nextUpSongs addObject:newSong];
 }
 
 -(void) clearSongs
@@ -32,5 +33,9 @@
     [self.nextUpSongs removeAllObjects];
 }
 
+-(NSInteger) getNumberofSongs
+{
+    return [self.nextUpSongs count];
+}
 
 @end

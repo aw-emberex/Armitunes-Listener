@@ -15,5 +15,6 @@
 
 -(void) addSong: (NSString*)newSong;
 -(void) clearSongs;
+-(NSInteger) getNumberofSongs;
 
 @end

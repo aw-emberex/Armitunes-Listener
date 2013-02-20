@@ -8,7 +8,11 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import "ArmiRSSParser.h"
+#import "ParsedRSSData.h"
 
 @interface Armitunes_ListenerTests : SenTestCase
+
+@property ArmiRSSParser* testParser;
+@property ParsedRSSData* testData;
 
 @end
